@@ -1,0 +1,20 @@
+%h1 Show Available room
+
+%p แสดงผล
+
+%table#rooms
+  %thead
+    %tr
+      %th room_id
+      %th volume
+      %th status
+      %th more info
+  %tbody
+    - @rooms.each do |room|
+      %tr
+        %td= room.room_id
+        %td= room.status
+        %td= room.volume
+        %td= link_to "ดูสถานะห้อง #{room.room_id}", room_path(room)
+
+= link_to 'Back', rooms_path

@@ -1,0 +1,28 @@
+Feature: See status of available room
+  As a Staff’s
+  So that I can making an online reservation
+  I want to filling reservation data and sending requests
+
+Background: Startup with Homepage
+  Given the following rooms exist:
+  | room_id      | status      |  volume  |
+  | engr303      | available   |  30      |
+  | engr304      | available   |  30      |
+  | engr305      | unavailable |  30      |
+  | engr313      | unavailable |  50      |
+
+  And I am on the search page
+
+  When I fill in "Volume" with "20"
+  And I press "ค้นหา"
+  Then I should be on the search_result page
+  And I should see "engr303"
+  And I should see "ดูสถานะห้อง engr303"
+
+Scenario: See the engr303 status
+  When I follow "ดูสถานะห้อง engr303"
+  Then I should be on the room "engr303" status page
+  And I should see "engr303"
+  And I should see "Status : available"
+  And I should see "Volume : 30"
+

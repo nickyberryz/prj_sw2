@@ -1,0 +1,14 @@
+%h1 New room
+
+
+= form_tag rooms_path do
+
+  = label :room, :room_id, 'Room_id'
+  = text_field :room, 'room_id'
+
+  = label :room, :status, 'Status'
+  = select :room, :status, ["available","unavailable"]
+
+  = submit_tag 'เพิ่มห้องใหม่'
+
+= link_to 'Back', staffs_path

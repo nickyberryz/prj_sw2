@@ -1,0 +1,11 @@
+%p#notice= notice
+
+-# in app/views/movies/show.html.haml
+
+%h2 Details about #{@room.room_id}
+
+%p Status : #{@room.status}
+
+= link_to 'จองห้อง', new_reserve_path(@room)
+= link_to 'Back to room list', staffs_path
+

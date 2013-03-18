@@ -1,0 +1,26 @@
+Feature: delete room data
+
+  As an audiovisual education, faculty of Engineering, Thammasat university
+  So that I can delete room data
+  I want to delete room data
+
+Background: Startup with Homepage
+  Given the following rooms exist:
+  | room_id      | status      |  volume  |
+  | engr303      | available   |  30      |
+  | engr304      | available   |  30      |
+  | engr305      | unavailable |  30      |
+  | engr313      | unavailable |  50      |
+
+Scenario: can delete room data that want to delete
+
+  Given I am on the room "engr303" status page for staff
+  Then I should see "Delete"
+  When I follow "Delete"
+  Then I should be on the staff page 
+  And I should see "Room was successfully deleted."
+
+
+
+
+
